@@ -8,7 +8,9 @@ class PlayersController < ApplicationController
 
   def show; end
 
-  def new; end
+  def new
+    @player = Player.new
+  end
 
   def edit; end
 
