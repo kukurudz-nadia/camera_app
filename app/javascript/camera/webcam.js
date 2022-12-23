@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load"), function () {
+document.addEventListener("turbolinks:load", function () {
     if(document.getElementById('snap')) {
         var cameraClick = new Audio("/camera_click.mp3")
         var changePictureButton = document.getElementById('change_picture')
@@ -15,7 +15,7 @@ document.addEventListener("turbolinks:load"), function () {
             return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)
         }
 
-        if(hasNavigator()) {
+        if (hasNavigator()) {
             var canvas = document.createElement('canvas')
             var video = document.querySelector('video')
 
@@ -29,7 +29,7 @@ document.addEventListener("turbolinks:load"), function () {
             }
 
             if (video) {
-                navigator.mediaDevices.getUserMedia(constraints).then((stream) => { video.srcObject = stream })
+                navigator.mediaDevices.getUserMedia(constraints).then( (stream) => { video.srcObject = stream })
             }
 
             if(changePictureButton) {
@@ -60,4 +60,4 @@ document.addEventListener("turbolinks:load"), function () {
             }
         }
     }
-}
+})

@@ -3,7 +3,7 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: %i[show edit update destroy]
   def index
-    @players = Player.order(:name)
+    @players = Player.order(:id)
   end
 
   def show; end
@@ -22,7 +22,7 @@ class PlayersController < ApplicationController
     respond_to do |format|
       if @player.save
         format.html { redirect_to @player, notice: 'Player was successfully created.' }
-        format.json {render :show, status: :created, location: @player }
+        format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new }
         format.json { render json: @player.errors, status: :unprocessable_entity }

@@ -3,7 +3,7 @@
 class PictureAttachmentService
   class << self
     def attach(model, picture)
-      base_image    = picture.gsub!(/^data:.*/, '')
+      base_image    = picture.gsub!(/^data:.*,/, '')
       decoded_image = Base64.decode64(base_image)
 
       model.picture.attach(
